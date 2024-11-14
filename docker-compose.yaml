@@ -22,6 +22,8 @@ services:
       context: ./nodejs
       dockerfile: Dockerfile
     restart: always
+    volumes:
+      - ./nodejs:/usr/src/app
     tty: true
     ports:
       - "3000"
