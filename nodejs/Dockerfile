@@ -1,11 +1,7 @@
-FROM node:22-alpine
+FROM node:22
 
 WORKDIR /app
-
 COPY . .
+RUN npm ci
 
-RUN npm install
-
-EXPOSE 3000
-
-ENTRYPOINT ["node", "index.js"]
+ENTRYPOINT [ "npm", "start" ]
